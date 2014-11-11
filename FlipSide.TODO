@@ -5,11 +5,19 @@ FlipSide Todo:
     ☐ Create mockup
 
   Build Process:
-    ☐ Create package.json @started(14-11-11 10:58)
-    ☐ Create Gruntfile
+    ✔ Create package.json @started(14-11-11 10:58) @done (14-11-11 11:08) @lasted(0:10)
+      ✔ Install grunt @started(14-11-11 12:00) @done (14-11-11 12:02) @lasted(0:02)
+    ✔ Create Gruntfile @started(14-11-11 12:03) @done (14-11-11 12:13) @lasted(0:10)
+      ✔ Install intern @started(14-11-11 12:02) @done (14-11-11 12:03) @lasted(0:01)
+      ✔ Install jshint @started(14-11-11 12:09) @done (14-11-11 12:10) @lasted(0:01)
+      ✔ Install bump @started(14-11-11 12:10) @done (14-11-11 12:11) @lasted(0:01)
+      ✔ Install version @started(14-11-11 12:11) @done (14-11-11 12:12) @lasted(0:01)
+      ✔ Install watch @started(14-11-11 12:12) @done (14-11-11 12:12) @lasted(0:00)
+      ✔ Install jsdoc @started(14-11-11 12:12) @done (14-11-11 12:13) @lasted(0:01)
+    ☐ Create base directory structure @started(14-11-11 12:15)
+    ☐ Integrate intern into grunt
     ☐ Integrate JSDoc
     ☐ Integrate JSHint
     ☐ Turn on watch for linting
       ☐ Or perhaps add auto linting into SublimeText?
     ☐ Install google closure
-    ☐ Install intern
