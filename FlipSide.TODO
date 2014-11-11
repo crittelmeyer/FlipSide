@@ -4,6 +4,27 @@ FlipSide Todo:
     ☐ Create wireframe
     ☐ Create mockup
 
+  Install Dev Environment:
+    ☐ Install IDE/dotfiles/utility scripts
+    ☐ Install version control - git, svn, etc
+  
+  Install Dev Environment Dependencies:
+    ☐ Install node
+    ☐ Install grunt-cli
+    ☐ Install closure compiler
+    ☐ Install bower
+    ☐ Install ruby
+    ☐ Install sass
+    ☐ Install java
+    ☐ Install selenium server
+    ☐ 
+
+  Early Documentation for Wiki:
+    ☐ Tech stack discussion
+    ☐ Tech stack list
+    ☐ Dev environment dependencies list
+
+
   Build Process:
     ✔ Create package.json @started(14-11-11 10:58) @done (14-11-11 11:08) @lasted(0:10)
       ✔ Install grunt @started(14-11-11 12:00) @done (14-11-11 12:02) @lasted(0:02)
@@ -14,10 +35,10 @@ FlipSide Todo:
       ✔ Install version @started(14-11-11 12:11) @done (14-11-11 12:12) @lasted(0:01)
       ✔ Install watch @started(14-11-11 12:12) @done (14-11-11 12:12) @lasted(0:00)
       ✔ Install jsdoc @started(14-11-11 12:12) @done (14-11-11 12:13) @lasted(0:01)
-    ☐ Create base directory structure @started(14-11-11 12:15)
-    ☐ Integrate intern into grunt
+    ✔ Create base directory structure @started(14-11-11 12:15) @done (14-11-11 12:24) @lasted(0:09)
+    ✔ Integrate intern into grunt @started(14-11-11 12:24) @done (14-11-11 13:43) @lasted(1:19)
+    ☐ Integrate JSHint @started(14-11-11 13:43)
     ☐ Integrate JSDoc
-    ☐ Integrate JSHint
     ☐ Turn on watch for linting
       ☐ Or perhaps add auto linting into SublimeText?
     ☐ Install google closure

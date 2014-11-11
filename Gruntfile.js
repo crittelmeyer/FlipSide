@@ -9,6 +9,28 @@ module.exports = function(grunt) {
         "src/**/*.js"
       ]
     },
+    intern: {
+      client: {
+        options: {
+          // for other available options, see:
+          // https://github.com/theintern/intern/wiki/Using-Intern-with-Grunt#task-options
+          config: "tests/intern"
+        }
+      },
+      clientSuiteGet: {
+        // an example of specifying a suite name
+        options: {
+          config: "tests/intern",
+          suites: ["tests/lib/get"]
+        }
+      },
+      runner: {
+        options: {
+          config: "tests/intern",
+          runType: "runner"
+        }
+      }
+    },
     bump: {
       files: ["package.json"]
     },
@@ -25,6 +47,7 @@ module.exports = function(grunt) {
 
   // Load the plugins
   grunt.loadNpmTasks("grunt-contrib-jshint");
+  grunt.loadNpmTasks("intern");
   grunt.loadNpmTasks("grunt-jsdoc");
   grunt.loadNpmTasks("grunt-bumpx");
   grunt.loadNpmTasks("grunt-version");
@@ -32,7 +55,7 @@ module.exports = function(grunt) {
 
   // Register tasks
   grunt.registerTask("default", ["test"]);
-  grunt.registerTask("test", ["jshint", "intern"]);
+  grunt.registerTask("test", ["jshint", "intern:client"]);
   grunt.registerTask("build", ["default", "bump", "version", ]);//"uglify"]);
   // grunt.registerTask("build", ["default", "jsdoc", "bump", "version", "uglify"]);
 };
