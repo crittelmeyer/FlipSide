@@ -5,40 +5,47 @@ FlipSide Todo:
     ☐ Create mockup
 
   Install Dev Environment:
-    ☐ Install IDE/dotfiles/utility scripts
-    ☐ Install version control - git, svn, etc
+    ✔ Install IDE/dotfiles/utility scripts @done (14-11-11 13:54)
+    ✔ Install version control - git, svn, etc @done (14-11-11 13:54)
   
   Install Dev Environment Dependencies:
-    ☐ Install node
-    ☐ Install grunt-cli
-    ☐ Install closure compiler
-    ☐ Install bower
-    ☐ Install ruby
-    ☐ Install sass
-    ☐ Install java
-    ☐ Install selenium server
-    ☐ 
+    ✔ Install node @done (14-11-11 13:46)
+    ✔ Install grunt-cli @done (14-11-11 13:46)
+    ✔ Install closure compiler @started(14-11-11 13:49) @done (14-11-11 14:14) @lasted(0:25)
+    ✔ Install bower @done (14-11-11 14:19)
+    ✔ Install ruby @done (14-11-11 14:19)
+    ✔ Install sass @done (14-11-11 14:19)
+    ✔ Install java @done (14-11-11 13:46)
+    ✔ Install selenium server @done (14-11-11 13:46)
+    ✔ Install chromedriver @done (14-11-11 13:46)
 
   Early Documentation for Wiki:
     ☐ Tech stack discussion
     ☐ Tech stack list
-    ☐ Dev environment dependencies list
-
+    ✔ Dev environment dependencies list & install instructions @done (14-11-11 14:11)
+    ✔ Dev scripts list & install instructions @done (14-11-11 14:11)
 
   Build Process:
     ✔ Create package.json @started(14-11-11 10:58) @done (14-11-11 11:08) @lasted(0:10)
       ✔ Install grunt @started(14-11-11 12:00) @done (14-11-11 12:02) @lasted(0:02)
+      ✔ Install load-grunt-tasks @started(14-11-11 14:14) @done (14-11-11 14:14) @lasted(0:00)
     ✔ Create Gruntfile @started(14-11-11 12:03) @done (14-11-11 12:13) @lasted(0:10)
       ✔ Install intern @started(14-11-11 12:02) @done (14-11-11 12:03) @lasted(0:01)
-      ✔ Install jshint @started(14-11-11 12:09) @done (14-11-11 12:10) @lasted(0:01)
-      ✔ Install bump @started(14-11-11 12:10) @done (14-11-11 12:11) @lasted(0:01)
-      ✔ Install version @started(14-11-11 12:11) @done (14-11-11 12:12) @lasted(0:01)
-      ✔ Install watch @started(14-11-11 12:12) @done (14-11-11 12:12) @lasted(0:00)
-      ✔ Install jsdoc @started(14-11-11 12:12) @done (14-11-11 12:13) @lasted(0:01)
+      ✔ Install grunt-contrib-jshint @started(14-11-11 12:09) @done (14-11-11 12:10) @lasted(0:01)
+      ✔ Install grunt-bumpx @started(14-11-11 12:10) @done (14-11-11 12:11) @lasted(0:01)
+      ✔ Install grunt-version @started(14-11-11 12:11) @done (14-11-11 12:12) @lasted(0:01)
+      ✔ Install grunt-contrib-watch @started(14-11-11 12:12) @done (14-11-11 12:12) @lasted(0:00)
+      ✔ Install grunt-jsdoc @started(14-11-11 12:12) @done (14-11-11 12:13) @lasted(0:01)
+      ✔ Install grunt-closure-compiler @started(14-11-11 14:23) @done (14-11-11 15:28) @lasted(1:05)
     ✔ Create base directory structure @started(14-11-11 12:15) @done (14-11-11 12:24) @lasted(0:09)
-    ✔ Integrate intern into grunt @started(14-11-11 12:24) @done (14-11-11 13:43) @lasted(1:19)
-    ☐ Integrate JSHint @started(14-11-11 13:43)
+    ✔ Integrate intern into grunt test @started(14-11-11 12:24) @done (14-11-11 13:43) @lasted(1:19)
+    ✔ Integrate google closure into grunt and test @started(14-11-11 13:43) @done (14-11-11 15:28) @lasted(1:45)
+    ✔ Integrate JSHint @started(14-11-11 15:42) @done (14-11-11 15:54) @lasted(0:12)
     ☐ Integrate JSDoc
     ☐ Turn on watch for linting
       ☐ Or perhaps add auto linting into SublimeText?
-    ☐ Install google closure
+
+
+
+
+        Install segmentio analytics.js

@@ -1,13 +1,24 @@
 module.exports = function(grunt) {
 
+  require("load-grunt-tasks")(grunt, {
+    pattern: [
+      "grunt-*",
+      "intern"
+    ]
+  });
+
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
     jshint: {
       files: [
         "Gruntfile.js",
-        "src/**/*.js"
-      ]
+        "src/**/*.js",
+        "!src/**/*.min.js"
+      ],
+      options: {
+        jshintrc: ".jshintrc",
+      }
     },
     intern: {
       client: {
@@ -39,23 +50,27 @@ module.exports = function(grunt) {
         src: "src/server/server.js"
       }
     },
+    "closure-compiler": {
+      server: {
+        closurePath: "/Users/chrisrittelmeyer/Tools/closure-compiler",
+        js: "src/server/Block.js",
+        jsOutputFile: "src/server/Block.min.js",
+        maxBuffer: 500,
+        options: {
+          compilation_level: "ADVANCED_OPTIMIZATIONS", // jshint ignore:line
+          language_in: "ECMASCRIPT5_STRICT" // jshint ignore:line
+        }
+      }
+    },
     watch: {
       files: ["<%= jshint.files %>"],
       tasks: ["default"]
     }
   });
 
-  // Load the plugins
-  grunt.loadNpmTasks("grunt-contrib-jshint");
-  grunt.loadNpmTasks("intern");
-  grunt.loadNpmTasks("grunt-jsdoc");
-  grunt.loadNpmTasks("grunt-bumpx");
-  grunt.loadNpmTasks("grunt-version");
-  grunt.loadNpmTasks("grunt-contrib-watch");
-
   // Register tasks
   grunt.registerTask("default", ["test"]);
   grunt.registerTask("test", ["jshint", "intern:client"]);
-  grunt.registerTask("build", ["default", "bump", "version", ]);//"uglify"]);
+  grunt.registerTask("build", ["default", "bump", "version", "closure-compiler"]);
   // grunt.registerTask("build", ["default", "jsdoc", "bump", "version", "uglify"]);
 };
