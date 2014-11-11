@@ -1,0 +1,7 @@
+{
+  "name": "FlipSide",
+  "version": "0.0.1",
+  "description": "SPA that allows you to upload two videos and play them simultaneously, switching between the two feeds via a shortcut key",
+  "author": "Chris Rittelmeyer <crittelmeyer@floatingtree.com>",
+  "engine": "node 0.10.x",
+}

@@ -1,0 +1,15 @@
+FlipSide Todo:
+
+  UI Design:
+    ☐ Create wireframe
+    ☐ Create mockup
+
+  Build Process:
+    ☐ Create package.json @started(14-11-11 10:58)
+    ☐ Create Gruntfile
+    ☐ Integrate JSDoc
+    ☐ Integrate JSHint
+    ☐ Turn on watch for linting
+      ☐ Or perhaps add auto linting into SublimeText?
+    ☐ Install google closure
+    ☐ Install intern
