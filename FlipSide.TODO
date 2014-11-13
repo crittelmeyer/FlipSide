@@ -20,6 +20,11 @@ FlipSide Todo:
     ✔ Install selenium server @done (14-11-11 13:46)
     ✔ Install chromedriver @done (14-11-11 13:46)
 
+  Research Spikes:
+    ☐ travis-ci
+    ☐ react.js/flux
+    ☐ foundation
+
   Early Documentation for Wiki:
     ☐ Tech stack discussion
     ☐ Tech stack list
@@ -43,9 +48,6 @@ FlipSide Todo:
     ✔ Integrate google closure into grunt and test @started(14-11-11 13:43) @done (14-11-11 15:28) @lasted(1:45)
     ✔ Integrate JSHint @started(14-11-11 15:42) @done (14-11-11 15:54) @lasted(0:12)
     ☐ Integrate JSDoc
-    ☐ Integrate travis-ci
-    ☐ Turn on watch for linting
-      ☐ Or perhaps add auto linting into SublimeText?
 
   Build Server:
     ☐ Create app.js
@@ -57,8 +59,15 @@ FlipSide Todo:
       ☐ Stop server
       ☐ REST calls:
         ☐ Upload videos
-        
+          ☐ Saves videos to disk
+          ☐ Saves video grouping data to db and generates unique ID
+        ☐ Get video group by ID
 
-
-
-        Install segmentio analytics.js
+  Build Client:
+    ☐ Create index.html
+    ☐ Install dependencies:
+      ☐ Browserify
+      ☐ jQuery
+      ☐ Lo-Dash
+      ☐ Foundation
+      ☐ SegmentIO analaytics
