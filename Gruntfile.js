@@ -7,19 +7,85 @@ module.exports = function(grunt) {
     ]
   });
 
+  /**
+    * Load in our build configuration file.
+    */
+  var userConfig = require("./build.config.js");
+
   // Project configuration.
-  grunt.initConfig({
+  var taskConfig = {
     pkg: grunt.file.readJSON("package.json"),
+
     jshint: {
-      files: [
-        "Gruntfile.js",
-        "src/**/*.js",
-        "!src/**/*.min.js"
-      ],
-      options: {
-        jshintrc: ".jshintrc",
+      options: (function() {
+        var options = grunt.file.readJSON(".jshintrc");
+        options.reporter = require("jshint-stylish");
+
+        return options;
+      }()),
+      source: {
+        files: {
+          src: ["<%= app_files.client.js %>", "<%= app_files.server.js %>"]
+        }
+      },
+      tests: {
+        options: (function() {
+          var options = grunt.file.readJSON(".jshintrc");
+          options.reporter = require("jshint-stylish");
+          options.unused = false;
+          options.expr = false;
+          options.predef.push("describe");
+          options.predef.push("it");
+          options.predef.push("define");
+          options.predef.push("beforeEach");
+          options.predef.push("sinon");
+          options.predef.push("devDependencies");
+          return options;
+        }()),
+        files: {
+          src: ["<%= test_files.client.js %>", "<%= test_files.server.js %>"]
+        }
+      },
+      gruntfile: {
+        options: (function() {
+          var options = grunt.file.readJSON(".jshintrc");
+          options.reporter = require("jshint-stylish");
+          options.unused = false;
+            return options;
+        }()),
+        files: {
+          src: ["Gruntfile.js"]
+        }
       }
     },
+
+
+    sass: { // Task
+      dist: { // Target
+        options: { // Target options
+          style: "compressed"
+        },
+        files: [{ // Dictionary of files
+          "build/styles.css": "src/styles/main.scss", // 'destination': 'source'
+        }]
+      }
+    },
+
+
+    autoprefixer: {
+      options: {
+        browsers: ["last 2 versions", "ie >= 9"],
+        map: true //Automatically updates Sass's previously generated sourcemap! Cool!
+      },
+      main: {
+        expand: true,
+        flatten: true,
+        src: "build/*.css", //output by sass
+        dest: "bin/"
+      }
+    },
+
+
     intern: {
       client: {
         options: {
@@ -50,11 +116,20 @@ module.exports = function(grunt) {
         src: "src/server/server.js"
       }
     },
+    browserify: {
+      defaults: {
+        src: "<%= app_files.js %>",
+        dest: "<%= build_dir %>/bundle.js"
+      },
+      watch: {
+        src: "<%= app_files.js %>"
+      }
+    },
     "closure-compiler": {
       server: {
         closurePath: "/Users/chrisrittelmeyer/Tools/closure-compiler",
-        js: "src/server/Block.js",
-        jsOutputFile: "src/server/Block.min.js",
+        js: "<%= build_dir %>/bundle.js",
+        jsOutputFile: "<%= build_dir %>/bundle.min.js",
         maxBuffer: 500,
         options: {
           compilation_level: "ADVANCED_OPTIMIZATIONS", // jshint ignore:line
@@ -66,11 +141,22 @@ module.exports = function(grunt) {
       files: ["<%= jshint.files %>"],
       tasks: ["default"]
     }
-  });
+  };
+
+  grunt.initConfig(grunt.util._.extend(taskConfig, userConfig));
 
   // Register tasks
+  grunt.registerTask("jshintVerbose", "Show all jshint errors and warings with associated codes", function() {
+    grunt.config.set("jshint.options.force", true);
+    grunt.config.set("jshint.options.verbose", true);
+    grunt.task.run("jshint");
+  });
+
+
+  grunt.registerTask("styles", ["sass", "autoprefixer"]);
+
   grunt.registerTask("default", ["test"]);
   grunt.registerTask("test", ["jshint", "intern:client"]);
-  grunt.registerTask("build", ["default", "bump", "version", "closure-compiler"]);
+  grunt.registerTask("build", ["default", "bump", "version", "browserify:defaults", "closure-compiler"]);
   // grunt.registerTask("build", ["default", "jsdoc", "bump", "version", "uglify"]);
 };

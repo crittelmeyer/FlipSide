@@ -52,7 +52,8 @@ define({
 	},
 
 	// Non-functional test suite(s) to run in each browser
-	suites: [ "Block/tests/lib/add", "Block/tests/lib/get" ],
+	suites: [ "Block/tests/server/add", "Block/tests/server/get" ],
+	// suites: [ "tests/server/rest_server", "tests/server/web_server" ],
 
 	// Functional test suite(s) to run in each browser once non-functional tests are completed
 	functionalSuites: [ /* "myPackage/tests/functional" */ ],

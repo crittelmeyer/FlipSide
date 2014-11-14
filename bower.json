@@ -1,0 +1,29 @@
+{
+  "name": "FlipSide",
+  "version": "0.0.0",
+  "homepage": "https://github.com/crittelmeyer/FlipSide",
+  "authors": [
+    "Chris Rittelmeyer <crittelmeyer@floatingtree.com>"
+  ],
+  "description": "SPA that allows you to upload two videos and play them simultaneously, switching between the two feeds via a shortcut key",
+  "main": "bin/app.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "video"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.2",
+    "ng-file-upload": "~1.6.12",
+    "normalize.css": "~3.0.2"
+  }
+}

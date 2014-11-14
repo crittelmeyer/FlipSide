@@ -43,6 +43,7 @@ FlipSide Todo:
       ✔ Install grunt-contrib-watch @started(14-11-11 12:12) @done (14-11-11 12:12) @lasted(0:00)
       ✔ Install grunt-jsdoc @started(14-11-11 12:12) @done (14-11-11 12:13) @lasted(0:01)
       ✔ Install grunt-closure-compiler @started(14-11-11 14:23) @done (14-11-11 15:28) @lasted(1:05)
+      ✔ Install grunt-browserify @done (14-11-13 20:25) @lasted(0:01)
     ✔ Create base directory structure @started(14-11-11 12:15) @done (14-11-11 12:24) @lasted(0:09)
     ✔ Integrate intern into grunt test @started(14-11-11 12:24) @done (14-11-11 13:43) @lasted(1:19)
     ✔ Integrate google closure into grunt and test @started(14-11-11 13:43) @done (14-11-11 15:28) @lasted(1:45)
@@ -71,3 +72,5 @@ FlipSide Todo:
       ☐ Lo-Dash
       ☐ Foundation
       ☐ SegmentIO analaytics
+      ☐ Angular
+      ☐ React.js
